@@ -8,7 +8,6 @@ context('Примеры использования различных видов
         cy.intercept('GET', '**/room', {fixture: 'automationinTesting/room.json'}).as('room')
         cy.intercept('POST', '**/message', {statusCode: 201, fixture: 'automationinTesting/message.json'}).as('message')
         cy.visit('/')
-
     })
 
     function fillForm() {
@@ -20,14 +19,11 @@ context('Примеры использования различных видов
         cy.get('[data-testid="ContactDescription"]').type('Lorem ipsum dolor sit amet, consectetur adipiscing elit')
     }
 
-
     it('shouldAnd', () => {
         cy.contains('Курсы').should('not.exist')
         //множественные утверждения
         cy.get('[class="col-sm-3 content"]').eq(1).should('be.visible').and('contain', 'Automation')
-
     })
-
 
     it('exampleAssertionsShould', () => {
         //проверка наличия элемента DOM структуре
@@ -39,17 +35,14 @@ context('Примеры использования различных видов
 
         cy.contains('Let me hack!').click()
         cy.contains('Let me hack').should('not.exist')
-
-
     })
 
     it('exampleAssertionsShould2', () => {
         cy.get('[data-testid="ContactName"]').should('be.empty')
         cy.get('[data-testid="ContactName"]').should('have.attr', 'placeholder', 'Name')
         cy.get('[data-testid="ContactName"]').should('have.class', 'form-control' )
-        cy.contains('Submit').should('have.css', 'color', '14')
+        cy.contains('Submit').should('have.css', 'color', 'rgb(0, 123, 255)')
     })
-
 
     //Нормальный тест на проверку позитивного сценария отправки запроса на бронирование
     it('checkRequest', () => {
@@ -59,7 +52,7 @@ context('Примеры использования различных видов
         //проверка параметров запроса, которые отправляются как объект
         cy.wait('@message').should(xhr => {
             expect(xhr.request.body).have.property('description', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit')
-            expect(xhr.request.body).have.property('email', 'olja-0801@mail')
+            expect(xhr.request.body).have.property('email', 'olja-0801@mail.ru')
             expect(xhr.request.body).have.property('name', 'Petr Ivanov')
             expect(xhr.request.body).have.property('phone', '89833337878')
             expect(xhr.request.body).have.property('subject', 'room')
@@ -68,16 +61,13 @@ context('Примеры использования различных видов
         cy.get('.contact').children().should('contain', 'Thanks for getting in touch Petr Ivanov!').and('contain', 'room')
     })
 
-
     it('checkResponse', () => {
         fillForm()
         cy.contains('Submit').click()
 
         //проверка параметров ответа
         cy.wait('@message').should(xhr => {
-            expect(xhr.response.body).have.property('name', 'Petr Ivano')
+            expect(xhr.response.body).have.property('name', 'Petr Ivanov')
         })
-
     })
-
 })

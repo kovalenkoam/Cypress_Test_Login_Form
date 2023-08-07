@@ -9,38 +9,29 @@ context('Примеры использования базовых методов
         cy.intercept('POST', '**/message', {statusCode: 201, fixture: 'automationinTesting/message.json'}).as('message')
         cy.intercept('GET', '**/1').as('UnavailableDate')
         cy.visit('/')
-
     })
 
     //основные методы
     it('visitAndUrl', () => {
-
         cy.visit('/')
         cy.url()//Получить URL-адрес активной страницы.
-
     })
-
 
     it('wait', () => {
         cy.wait(3000)
         cy.wait('@room')
-        cy.wait('@message')
     })
-
 
     //visit, wait, get, type, clear, click, contains, url
     it('getTypeClearContainsClick', () => {
-
         cy.get('[data-testid="ContactName"]').type('Anna')
         cy.get('[data-testid="ContactName"]').type('{end}{backspace}')//использование опций при вызове медода
         cy.get('[data-testid="ContactName"]').clear().type('1')//можно вызывать несколько методов подряд
         cy.contains('Submit').click()
     })
 
-
     //Команды
     it('focusAndBlur', () => {
-
         cy.contains('Submit').focus()
         cy.contains('Submit').blur()
 
@@ -50,7 +41,4 @@ context('Примеры использования базовых методов
     it('optionsForMetod', () => {
         cy.get('[data-testid="ContactName"]').type('{end}{backspace}')//использование опций при вызове медода
     })
-
-
-
 })

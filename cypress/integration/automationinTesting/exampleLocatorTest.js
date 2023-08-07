@@ -7,14 +7,10 @@ context('Проверка элементов на странице', function ()
         cy.intercept('GET', '**/branding', {fixture: 'automationinTesting/branding.json'}).as('branding')
         cy.intercept('GET', '**/room', {fixture: 'automationinTesting/room.json'}).as('room')
         cy.intercept('POST', '**/message', {statusCode: 201, fixture: 'automationinTesting/message.json'}).as('message')
-
         cy.visit('/')
-
     })
 
-
     //добавить тест на посещение страницы
-
 
     //Тестовый пример для демонстрации определения локаторов различными способами
     it('typesOfLocators', () => {
@@ -34,18 +30,14 @@ context('Проверка элементов на странице', function ()
 
         //Индексы: позволяют выбирать элементы на странице по их порядковому номеру
         cy.get('button[type="button"]').eq(2)
-
     })
-
 
     //Начнем с простого способа определения локатора, показать мишень, копирование локаторов
     it('getLocatorMessageForm', () => {
 
         //определить вместе локаторы для полей Email, Phone, Subject, Message
         //определить локатор кнопки Submit
-
     })
-
 
     //Найти локаторы кнопок "Book this room" и "Submit"
     it('getLocatorButton', () => {
@@ -57,7 +49,5 @@ context('Проверка элементов на странице', function ()
         cy.get('.contact > :nth-child(3) > :nth-child(3)')//хороший пример локатора или нет? Почему?
         cy.contains('012345678901')//хороший пример локатора или нет? Почему?
         cy.get('[class="col-sm-5"] > p').eq('2')//хороший пример локатора или нет? Почему?
-
     })
-
 })
