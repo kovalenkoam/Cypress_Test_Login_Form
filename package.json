@@ -9,7 +9,7 @@
       "start": "cypress open"
     },
     "keywords": [],
-    "author": "Olga Shlapak",
+    "author": "Kovalenko Alexey",
     "license": "ISC",
     "dependencies": {
       "cy-spok": "1.6.1",

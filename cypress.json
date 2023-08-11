@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://automationintesting.online",
+  "baseUrl": "http://51.250.1.158:49153",
   "useRelativeSnapshots": true,
   "ignoreTestFiles": ["*snapshots.js", "*mock.js"],
   "chromeWebSecurity": false,
