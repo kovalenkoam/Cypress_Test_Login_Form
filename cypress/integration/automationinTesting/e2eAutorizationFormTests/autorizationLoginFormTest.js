@@ -1,6 +1,6 @@
-import {mockRequests} from './mock'
+import {mockRequests} from '../mock'
 
-context('Testing the login form', function () {
+context('е2е тестирование формы логина', function () {
 
     beforeEach(function () {
         mockRequests()
@@ -18,49 +18,51 @@ context('Testing the login form', function () {
             .and('have.css', 'background-color', 'rgb(244, 67, 54)')
     }
 
-    it('Сorrect authorization', () => {
+    it('Успешная авторизация', () => {
         cy.login('admin', 'admin')
         cy.wait('@login').its('response.statusCode').should('eq', 200)
         cy.url().should('eq', 'http://51.250.1.158:49153/files/')
     })
 
-    it('Correct exit', () => {
+    //е2е тест на разлогин к дз от занятия 35
+
+    it('Успешный выход из Системы', () => {
         cy.login('admin', 'admin')
         cy.get('#logout').click()
         cy.url().should('eq', 'http://51.250.1.158:49153/login')
     })
 
-    it('Sending an empty login', () => {
+    it('Неуспешная авторизация - пустой логин/пароль', () => {
         cy.visit('/')
         cy.get('.button').click()
         validateError()
     })
 
-    it('Incorrect authorization ', () => {
+    it('Неуспешная авторизация - неверный логин/пароль', () => {
         cy.login('Alexey', 'Kovalenko')
         cy.get('.button').click()
         validateError()
     })
 
-    it('Incorrect login and correct password ', () => {
+    it('Неуспешная авторизация - неверный логин', () => {
         cy.login('Alexey', 'admin')
         cy.get('.button').click()
         validateError()
     })
 
-    it('Correct login and incorrect password ', () => {
+    it('Неуспешная авторизация - неверный пароль', () => {
         cy.login('admin', 'Kovalenko')
         validateError()
     })
 
-    it('Submit form with login only', () => {
+    it('Неуспешная авторизация - пустой пароль', () => {
         cy.visit('/')
         cy.get('[type="text"]').type('admin')
         cy.get('.button').click()
         validateError()
     })
 
-    it('Submit form with password only', () => {
+    it('Неуспешная авторизация - пустой логин', () => {
         cy.visit('/')
         cy.get('[type="password"]').type('admin')
         cy.get('.button').click()

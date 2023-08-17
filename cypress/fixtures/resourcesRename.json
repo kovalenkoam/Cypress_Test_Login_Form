@@ -1,0 +1,41 @@
+{
+  "items": [
+    {
+      "path": "/new folder",
+      "name": "new folder",
+      "size": 4096,
+      "extension": "",
+      "modified": "2023-08-17T06:13:13.897568399Z",
+      "mode": 2147484141,
+      "isDir": true,
+      "isSymlink": false,
+      "type": ""
+    },
+    {
+      "path": "/new name",
+      "name": "new name",
+      "size": 9,
+      "extension": "",
+      "modified": "2023-08-11T08:00:45.878628221Z",
+      "mode": 493,
+      "isDir": false,
+      "isSymlink": false,
+      "type": "text"
+    }
+  ],
+  "numDirs": 1,
+  "numFiles": 1,
+  "sorting": {
+    "by": "name",
+    "asc": true
+  },
+  "path": "/",
+  "name": "new name",
+  "size": 4096,
+  "extension": "",
+  "modified": "2023-08-17T08:08:53.574938519Z",
+  "mode": 2147484141,
+  "isDir": true,
+  "isSymlink": false,
+  "type": ""
+}

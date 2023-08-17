@@ -1,20 +1,17 @@
-
-  {
+{
     "name": "myfirstcypressproject",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "cypress open"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "cypress open"
     },
     "keywords": [],
     "author": "Kovalenko Alexey",
     "license": "ISC",
     "dependencies": {
-      "cy-spok": "1.6.1",
-      "cypress": "9.5.0"
+        "cy-spok": "^1.6.1",
+        "cypress": "9.5.0"
     }
-  }
-
-
+}
