@@ -11,7 +11,7 @@ context('Тестирование функции перемещения', functi
     it('Успешное перемещение файла', () => {
         //ждем перехвата и выполнения первого запроса Resources
         cy.wait('@resources')
-        //перехватываем следующий Resources, которые приходит после переименования
+        //перехватываем следующий Resources, которые приходит после перемещения
         cy.intercept('GET', '**/resources/**', {fixture: 'resourcesMove.json'}).as('resourcesMove')
         cy.get('[aria-label="kovalenko"]').should('exist').click()
         cy.get('[aria-label="Переместить файл"]> .material-icons').click()

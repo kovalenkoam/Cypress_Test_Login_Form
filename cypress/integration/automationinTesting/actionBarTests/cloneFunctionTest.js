@@ -11,7 +11,7 @@ context('Тестирование функции копирования', functi
     it('Успешное копирование', () => {
         //ждем перехвата и выполнения первого запроса Resources
         cy.wait('@resources')
-        //перехватываем следующий Resources, которые приходит после клонирования
+        //перехватываем следующий Resources, которые приходит после копирования
         cy.intercept('GET', '**/resources/', {fixture: 'resourcesClone.json'}).as('resourcesClone')
         cy.get('[aria-label="kovalenko"]').should('exist').click()
         cy.get('[aria-label="Скопировать файл"]').click()

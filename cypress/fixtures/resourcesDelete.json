@@ -1,0 +1,30 @@
+{
+  "items": [
+    {
+      "path": "/new folder",
+      "name": "new folder",
+      "size": 4096,
+      "extension": "",
+      "modified": "2023-08-17T14:50:00.738785884Z",
+      "mode": 2147484141,
+      "isDir": true,
+      "isSymlink": false,
+      "type": ""
+    }
+  ],
+  "numDirs": 1,
+  "numFiles": 0,
+  "sorting": {
+    "by": "name",
+    "asc": true
+  },
+  "path": "/",
+  "name": "kovalenko",
+  "size": 4096,
+  "extension": "",
+  "modified": "2023-08-17T16:12:13.300696624Z",
+  "mode": 2147484141,
+  "isDir": true,
+  "isSymlink": false,
+  "type": ""
+}
